@@ -1,5 +1,4 @@
 # Mission Manager
-https://app.codeship.com/projects/f83395e0-3808-0138-9021-62667766dbb6/status?branch=master
 
 ## Setup
 ```
