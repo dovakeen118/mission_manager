@@ -1,4 +1,4 @@
-[![Codeship Status for dovakeen118/mission_manager](https://app.codeship.com/projects/f83395e0-3808-0138-9021-62667766dbb6/status?branch=master)
+[![Codeship Status for dovakeen118/mission_manager](https://app.codeship.com/projects/f83395e0-3808-0138-9021-62667766dbb6/status?branch=master)](https://app.codeship.com/projects/386424)
 
 # Mission Manager
 
