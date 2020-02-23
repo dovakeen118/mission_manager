@@ -1,0 +1,15 @@
+<div class="callout">
+  <h1>All Missions</h1>
+
+  <h3><%= link_to 'Submit a New Mission!', new_mission_path %></h3>
+
+  <div class="callout">
+    <% if @missions == [] %>
+      <p>No missions have been submitted</p>
+    <% else %>
+      <% @missions.each do |mission| %>
+        <li><%= link_to mission.title, mission %></li>
+      <% end %>
+    <% end %>
+  </div>
+</div>

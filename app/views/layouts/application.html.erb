@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mission Manager</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+  </head>
+
+  <body>
+    <div class="top-bar"
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li class="menu-text"><%= link_to 'Hidden Leaf Village', root_path %></li>
+        </ul>
+        <div class="top-bar-right">
+          <ul class="menu">
+            <% if signed_in? %>
+              <li><%= link_to "Hi, #{current_user.full_name}!", edit_user_registration_path %></li>
+              <li><%= link_to 'Missions', missions_path %></li>
+              <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to "Sign in", new_user_session_path %></li>
+              <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <%- flash.each do |key, value| -%>
+      <div class="flash flash-<%= key %>">
+        <%= value %>
+      </div>
+    <%- end -%>
+
+    <%= yield %>
+
+    <%= javascript_include_tag 'application' %>
+
+    <%- if Rails.env.development? || Rails.env.test? -%>
+      <%= javascript_tag do %>
+        window.railsEnv = '<%= Rails.env %>'
+      <%- end -%>
+    <%- end -%>
+
+    <%= javascript_pack_tag 'application' %>
+
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<div class="callout">
+  <%= form_for(@mission) do |f| %>
+    <% if @mission.errors.any? %>
+      <div id="error_explanation">
+        <p><%= pluralize(@mission.errors.count, "error") %> prohibited this mission from being saved:</p>
+
+        <ul>
+          <% @mission.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :title, "Title:" %><br />
+      <%= f.text_field :title, id: :mission_title %>
+    </div>
+
+    <div class="field">
+      <%= f.label :description, "Description:" %><br />
+      <%= f.text_area :description, id: :mission_description %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
