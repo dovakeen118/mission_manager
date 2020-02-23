@@ -9,6 +9,7 @@
     <% else %>
       <% @missions.each do |mission| %>
         <li><%= link_to mission.title, mission %></li>
+        <p>Submitted by: <%= mission.user.full_name %> (<%= mission.user.role %>)</p>
       <% end %>
     <% end %>
   </div>
