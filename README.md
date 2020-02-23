@@ -1,13 +1,4 @@
-[![Codeship Status for dovakeen118/naruto_pundit](https://app.codeship.com/projects/d6128a10-2fcc-0138-f6f0-3ade278cb526/status?branch=master)](https://app.codeship.com/projects/385135)
-
-# Naruto Pundit
-
-This application is an example of how to implement the Pundit Ruby gem for user authorization.\
-The `master` branch is a work in progress to incorporate new technologies.\
-The `starter-code` branch does not include Pundit - it is where you can start to add your roles for authorization.\
-The `add-user-roles` branch includes Pundit policies for both Users and Missions.
-
-Pundit repository: https://github.com/varvet/pundit
+# Mission Manager
 
 ## Setup
 ```
