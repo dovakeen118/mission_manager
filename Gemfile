@@ -53,11 +53,13 @@ gem 'pry-rails', :groups => [:development, :test]
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'rspec-rails', group: [:development, :test]
 gem 'capybara', group: [:development, :test]
-gem 'factory_bot', group: [:development, :test]
+gem 'factory_bot_rails', group: [:development, :test]
 gem 'shoulda-matchers', group: [:development, :test], require: false
 gem 'valid_attribute', group: [:development, :test]
 gem 'database_cleaner', group: [:development, :test]
 gem 'launchy', group: [:development, :test]
+gem 'shoulda-callback-matchers', '~> 1.1.1', group: [:test]
+gem 'faker', group: [:test]
 gem 'foundation-rails', '~> 6.5', '>= 6.5.3.0'
 gem 'autoprefixer-rails'
 gem 'webpacker', '~> 4.x'
