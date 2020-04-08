@@ -9,7 +9,6 @@ feature 'user signs up with facebook', %Q{
   # Acceptance Criteria
   # [ X ] I must have a Facebook account
   # [ X ] Facebook account must have a name and email address
-  # [ ] User can update their existing account to link with their Facebook
 
   let!(:login_form) { LoginForm.new }
 

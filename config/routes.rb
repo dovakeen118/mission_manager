@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   }
 
   resources :missions
+  resources :users, only: [:index, :show, :update, :destroy]
 end

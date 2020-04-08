@@ -1,0 +1,13 @@
+<div class="callout">
+  <h1>All Users (<%= @users.count %>)</h1>
+
+  <div class="callout secondary">
+    <% if current_user && current_user.admin? %>
+      <%= render partial: 'admin_user_index', users: @users %>
+    <% elsif current_user %>
+      <%= render partial: 'user_index', users: @users %>
+    <% else %>
+      <%= render partial: 'visitor_user_index', users: @users %>
+    <% end %>
+  </div>
+</div>

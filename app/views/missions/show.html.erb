@@ -5,7 +5,7 @@
   <div class="callout">
     <h3><%= @mission.title %></h3>
     <p><%= @mission.description %></p>
-    <p>Submitted by: <%= @mission.user.full_name %></p>
+    <p>Submitted by: <%= link_to @mission.user.full_name, @mission.user %> (<%= @mission.user.role %>)</p>
     <p>Submitted at: <%= @mission.created_at.strftime("%B %e, %Y") %></p>
   </div>
 

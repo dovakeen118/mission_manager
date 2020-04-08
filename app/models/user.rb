@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   EMAIL_REGEXP = /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
+  enum role: { user: 0, admin: 1 }
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -9,10 +10,14 @@ class User < ApplicationRecord
 
   has_many :missions
 
-  validates_presence_of :full_name, :encrypted_password
+  validates :full_name, presence: true
+  validates :encrypted_password, presence: true
   validates :email, presence: true,
     format: EMAIL_REGEXP,
     uniqueness: true
+  validates :role, presence: true, inclusion: ["admin", "user"]
+
+  after_initialize :set_default_role, if: :new_record?
 
   def self.new_with_session(params, session)
     super.tap do |user|
@@ -33,5 +38,11 @@ class User < ApplicationRecord
       user.provider = auth["provider"]
       user.uid = auth["uid"]
     end
+  end
+
+  private
+
+  def set_default_role
+    self.role ||= :user
   end
 end
