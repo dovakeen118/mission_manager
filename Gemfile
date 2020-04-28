@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.4.5'
+ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
@@ -13,11 +13,6 @@ gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'mini_racer', platforms: :ruby
-
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -25,15 +20,24 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'autoprefixer-rails'
+gem 'carrierwave', '~> 2.0'
+gem 'devise'
+gem 'foundation-rails', '~> 6.5', '>= 6.5.3.0'
+gem 'jquery-rails'
+gem 'omniauth-facebook'
+gem 'pundit'
+gem 'webpacker', '~> 4.x'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'dotenv-rails'
+  gem 'pry-rails'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -45,25 +49,13 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem 'pry-rails', :groups => [:development, :test]
-gem 'dotenv-rails', groups: [:development, :test]
-gem 'rspec-rails', group: [:development, :test]
-gem 'capybara', group: [:development, :test]
-gem 'factory_bot_rails', group: [:development, :test]
-gem 'shoulda-matchers', group: [:development, :test], require: false
-gem 'valid_attribute', group: [:development, :test]
-gem 'database_cleaner', group: [:development, :test]
-gem 'launchy', group: [:development, :test]
-gem 'shoulda-callback-matchers', '~> 1.1.1', group: [:test]
-gem 'faker', group: [:test]
-gem 'foundation-rails', '~> 6.5', '>= 6.5.3.0'
-gem 'autoprefixer-rails'
-gem 'webpacker', '~> 4.x'
-gem 'jquery-rails'
-gem 'devise'
-gem 'omniauth-facebook'
-gem 'pundit'
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'launchy'
+  gem 'shoulda-callback-matchers', '~> 1.1.1'
+  gem 'shoulda-matchers', require: false
+  gem 'valid_attribute'
+end
