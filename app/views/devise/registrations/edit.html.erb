@@ -34,6 +34,11 @@
         </div>
       </div>
 
+      <div class="field callout">
+        <%= f.label :profile_image, "Change Your Profile Image" %>
+        <%= f.file_field :profile_image %>
+      </div>
+
       <div class="callout ">
         <div class="field">
           <%= f.label :current_password, "Current Password (required to confirm these changes)" %>
@@ -52,6 +57,4 @@
   <h3>Cancel my account</h3>
 
   <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-  <%= link_to "Back", :back %>
 </div>

@@ -17,6 +17,8 @@ class User < ApplicationRecord
     uniqueness: true
   validates :role, presence: true, inclusion: ["admin", "user"]
 
+  mount_uploader :profile_image, ProfileImageUploader
+
   after_initialize :set_default_role, if: :new_record?
 
   def self.new_with_session(params, session)
@@ -34,6 +36,7 @@ class User < ApplicationRecord
     where(provider: auth["provider"], uid: auth["uid"]).first_or_create do |user|
       user.full_name = auth["info"]["name"]
       user.email = auth["info"]["email"]
+      user.remote_profile_image_url = auth["info"]["image"]
       user.password = Devise.friendly_token[0,20]
       user.provider = auth["provider"]
       user.uid = auth["uid"]

@@ -1,7 +1,19 @@
 <div class="callout">
-  <h5> <%= link_to "Back to all Users", users_path %></h5>
+  <h5><%= link_to "Back to all Users", users_path %></h5>
 
+  <img class="profile-image" src=<%= @user.profile_image %>>
   <h1><%= @user.full_name %> </h1>
-  <h3>email: <%= @user.email %></h3>
-  <h3>role: <%= @user.role %></h3>
+  <h4>email: <%= @user.email %></h4>
+  <h4>role: <%= @user.role %></h4>
+
+  <div class="callout">
+    <% if @missions == [] %>
+      <p>No missions</p>
+    <% else %>
+      <h3>Missions</h3>
+      <% @missions.each do |mission| %>
+        <li><%= link_to mission.title, mission %></li>
+      <% end %>
+    <% end %>
+  </div>
 </div>

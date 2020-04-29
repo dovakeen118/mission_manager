@@ -19,9 +19,9 @@ body {
   .callout {
     border-radius: 10px;
     margin-top: 25px;
-    li {
-      list-style-image: url(leaf.jpeg);
-    }
+    // li {
+    //   list-style-image: url(leaf.jpeg);
+    // }
   }
 }
 
@@ -29,8 +29,11 @@ body {
   background-color: #4A8384;
   font-size: 24px;
 
-  a { color: black; }
   .menu { background-color: #4A8384; }
+  a { color: black; }
+
+  .dropdown.menu > li.is-active > a { color: black }
+  .dropdown.menu > li.is-dropdown-submenu-parent > a::after { border-color: black transparent transparent }
 }
 
 .home-page {
@@ -56,4 +59,9 @@ body {
 
     a { color: white; }
   }
+}
+
+.profile-image {
+  max-height: 250px;
+  width: auto;
 }

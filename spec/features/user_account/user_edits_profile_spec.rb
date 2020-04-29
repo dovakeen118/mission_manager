@@ -40,12 +40,4 @@ feature 'user edits account', %Q{
     expect(page).to have_content('Your account has been updated successfully.')
     expect(page).to have_content("Hi, Sakura")
   end
-
-  xscenario 'user updates their existing account to link with their Facebook' do
-
-  end
-
-  xscenario 'user updates their existing account to remove Facebook association' do
-
-  end
 end
