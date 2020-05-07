@@ -1,6 +1,9 @@
 <% @users.each do |user| %>
-  <div class="callout">
-    <li><%= link_to "#{user.full_name}", user %></li>
-    <p>(role: <%= user.role %>)</p>
+  <div class="callout grid-x grid-margin-x">
+    <img class="profile-image cell small-4" src=<%= user.profile_image %> alt=<%= user.full_name %>>
+    <div class="cell auto">
+      <h4><%= link_to "#{user.full_name}", user %></h4>
+      <p><i><%= user.role %><i></p>
+    </div>
   </div>
 <% end %>

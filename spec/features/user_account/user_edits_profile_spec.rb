@@ -34,6 +34,8 @@ feature 'user edits account', %Q{
     fill_in 'Full Name', with: 'Sakura'
     fill_in 'Email', with: 'sakura@email.com'
     fill_in 'Current Password', with: 'banana'
+    attach_file :user_profile_image, "#{Rails.root}/spec/support/images/photo.png"
+    
     expect(page).to_not have_content('banana')
     click_button 'Update'
 

@@ -1,7 +1,10 @@
 <div class="callout">
-  <h5><%= link_to "Back to all Users", users_path %></h5>
+  <i class="fa fa-chevron-left">
+    <%= link_to "Back to all Users", users_path %>
+  </i>
+  <h5></h5>
 
-  <img class="profile-image" src=<%= @user.profile_image %>>
+  <img class="profile-image" src=<%= @user.profile_image %> alt=<%= @user.full_name %>>
   <h1><%= @user.full_name %> </h1>
   <h4>email: <%= @user.email %></h4>
   <h4>role: <%= @user.role %></h4>

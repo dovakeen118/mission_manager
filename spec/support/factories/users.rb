@@ -5,6 +5,7 @@ FactoryBot.define do
     sequence(:full_name) { |n| "Naruto#{n}" }
     sequence(:email) { |n| "naruto#{n}@email.com" }
     role { 0 }
+    profile_image { "#{Rails.root}/spec/support/images/naruto.png" }
     password { "banana" }
     password_confirmation { "banana" }
 
