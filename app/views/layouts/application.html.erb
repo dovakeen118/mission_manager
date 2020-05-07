@@ -42,9 +42,15 @@
     </div>
 
     <div class="grid-container">
+
       <%- flash.each do |key, value| -%>
-        <div class="flash flash-<%= key %>">
-          <%= value %>
+        <div class="callout" data-closable>
+          <button class="close-button" aria-label="Close alert" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <div class="flash flash-<%= key %>">
+            <%= value %>
+          </div>
         </div>
       <%- end -%>
 

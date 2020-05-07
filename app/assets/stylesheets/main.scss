@@ -68,6 +68,4 @@ body {
   height: auto;
 }
 
-.delete:hover {
-  i, a { color: red }
-}
+i.delete:hover, i.delete:hover > a { color: red }
