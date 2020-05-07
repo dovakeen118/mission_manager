@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def show
     authorize @user
+    @missions = @user.missions
   end
 
   def update

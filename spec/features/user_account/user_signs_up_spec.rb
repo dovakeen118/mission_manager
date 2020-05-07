@@ -20,8 +20,9 @@ feature 'user signs up', %Q{
     fill_in 'Email', with: 'naruto@email.com'
     fill_in 'Password', with: 'banana'
     fill_in 'Password confirmation', with: 'banana'
-    expect(page).to_not have_content('banana')
+    attach_file :user_profile_image, "#{Rails.root}/spec/support/images/photo.png"
 
+    expect(page).to_not have_content('banana')
     click_button 'Sign up'
 
     expect(page).to have_content('Welcome! You have signed up successfully.')

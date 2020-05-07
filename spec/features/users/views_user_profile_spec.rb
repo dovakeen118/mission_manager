@@ -26,14 +26,14 @@ feature 'view a user profile page', %Q{
     login_as user1
     visit user_path(user2)
 
-    expect(page).to have_content('You are not authorized to view this page!')
+    expect(page).to have_content('You are not authorized to view that page!')
   end
 
   scenario 'user attempts to view an admin profile page' do
     login_as user1
     visit user_path(admin)
 
-    expect(page).to have_content('You are not authorized to view this page!')
+    expect(page).to have_content('You are not authorized to view that page!')
   end
 
   scenario 'user views their own profile page' do
@@ -41,6 +41,7 @@ feature 'view a user profile page', %Q{
     visit user_path(user1)
 
     expect(page).to have_link 'Back to all Users', href: users_path
+    expect(page.find('img.profile-image')['src']).to have_content(user1.profile_image)
     expect(page).to have_content(user1.full_name)
     expect(page).to have_content(user1.email)
     expect(page).to have_content(user1.role)
@@ -51,6 +52,7 @@ feature 'view a user profile page', %Q{
     visit user_path(user2)
 
     expect(page).to have_link 'Back to all Users', href: users_path
+    expect(page.find('img.profile-image')['src']).to have_content(user2.profile_image)
     expect(page).to have_content(user2.full_name)
     expect(page).to have_content(user2.email)
     expect(page).to have_content(user2.role)

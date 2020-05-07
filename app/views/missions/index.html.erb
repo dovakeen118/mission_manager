@@ -3,13 +3,15 @@
 
   <h3><%= link_to 'Submit a New Mission!', new_mission_path %></h3>
 
-  <div class="callout">
+  <div class="callout secondary">
     <% if @missions == [] %>
       <p>No missions have been submitted</p>
     <% else %>
       <% @missions.each do |mission| %>
+      <div class="callout">
         <li><%= link_to mission.title, mission %></li>
-        <p>Submitted by: <%= mission.user.full_name %> (<%= mission.user.role %>)</p>
+        <p>Submitted by: <i><%= mission.user.full_name %><i></p>
+      </div>
       <% end %>
     <% end %>
   </div>
