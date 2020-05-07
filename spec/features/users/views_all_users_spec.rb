@@ -41,6 +41,18 @@ feature 'view list of all users', %Q{
     expect(page).to have_content(user1.role)
   end
 
+  scenario 'admin views all users' do
+    login_as admin
+    visit users_path
+
+    expect(page).to have_content('All Users (2)')
+    expect(page).to have_link(admin.full_name, href: user_path(admin))
+    expect(page).to have_content(admin.role.titleize)
+
+    expect(page).to have_link(user1.full_name, href: user_path(user1))
+    expect(page).to have_content(user1.role.titleize)
+  end
+
   scenario 'admin updates a user role' do
     login_as admin
     visit users_path
