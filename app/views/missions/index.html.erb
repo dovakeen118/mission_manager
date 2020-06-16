@@ -10,7 +10,7 @@
       <% @missions.each do |mission| %>
       <div class="callout">
         <li><%= link_to mission.title, mission %></li>
-        <p>Submitted by: <i><%= mission.user.full_name %><i></p>
+        <p>Submitted by: <i><%= mission.user.full_name %></i></p>
       </div>
       <% end %>
     <% end %>
