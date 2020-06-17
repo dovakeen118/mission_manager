@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :email, :full_name
+  attributes :id, :email, :full_name, :role
 
   has_many :missions
 end
