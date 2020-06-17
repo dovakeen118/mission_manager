@@ -1,7 +1,9 @@
 class Api::V1::MissionsController < ApplicationController
   def index
-    missions = Mission.all
+    render json: Mission.all
+  end
 
-    render json: missions
+  def show
+    render json: Mission.find(params[:id])
   end
 end

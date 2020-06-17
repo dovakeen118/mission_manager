@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'homes#index'
 
   get '/missions', to: "static_pages#index"
+  get '/missions/:id', to: "static_pages#index"
 
   get '/missions/new', to: "missions#new"
 
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :missions, only: [:index]
+      resources :missions, only: [:index, :show]
     end
   end
 
