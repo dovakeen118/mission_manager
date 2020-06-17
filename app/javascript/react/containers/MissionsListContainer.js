@@ -12,22 +12,24 @@ const MissionsContainer = (props) => {
       if (response.ok) {
         return response;
       } else {
-        let errorMessage = `${reponse.status} (${reponse.statusText})`;
+        let errorMessage = `${response.status} (${response.statusText})`;
         let error = new Error(errorMessage);
         throw error;
       }
     })
-    .then((response) => response.json())
+    .then((response) => {
+      return response.json()
+    })
     .then((body) => {
       setMissions(body.missions)
     })
-    .catch((error) => console.error(`Error in fetch: ${error.message}`));
+    .catch((error) => console.error(`Error in fetch for missions: ${error.message}`));
   }, []);
 
   let missionTiles;
 
   if (missions.length === 0) {
-    missionTiles = <p>No missions have been submitted</p>
+    missionTiles = <p><i>No missions have been submitted</i></p>
   } else {
     missionTiles = missions.map((mission) => {
       return (
@@ -42,8 +44,11 @@ const MissionsContainer = (props) => {
   return (
     <div>
       <h1>All Missions</h1>
+
       <h3>
-        <Link to="/missions/new">Submit a new Mission</Link>
+        <Link to="/missions/new">
+          Submit a new Mission
+        </Link>
       </h3>
 
       <div className="callout secondary">
