@@ -33,8 +33,8 @@ const MissionShowContainer = (props) => {
         id: body.mission.id,
         title: body.mission.title,
         description: body.mission.description,
-        user: body.mission.user,
-        createdTimestamp: body.mission.created_at
+        createdTimestamp: body.mission.created_at,
+        user: body.mission.user
       })
     })
     .catch((error) => console.error(`Error in fetch for mission: ${error.message}`));
