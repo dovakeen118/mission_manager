@@ -18,15 +18,12 @@ const MissionShowContainer = (props) => {
     fetch(`/api/v1/missions/${id}`)
     .then((response) => {
       if (response.ok) {
-        return response;
+        return response.json();
       } else {
         let errorMessage = `${response.status} (${response.statusText})`;
         let error = new Error(errorMessage);
         throw error;
       }
-    })
-    .then((response) => {
-      return response.json()
     })
     .then((body) => {
       setMission({

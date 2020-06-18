@@ -1,3 +1,6 @@
+Mission.all.destroy_all
+User.all.destroy_all
+
 kakashi = User.create(full_name: "Kakashi Hatake", email: "kakashi@leaf.com", role: 1, password: ENV["USER_SEED_PWD1"], profile_image: File.open(File.join(Rails.root, '/app/assets/images/kakashi.jpg')))
 naruto = User.create(full_name: "Naruto Uzumaki", email: "naruto@leaf.com", password: ENV["USER_SEED_PWD2"], profile_image: File.open(File.join(Rails.root, '/app/assets/images/naruto.png')))
 sakura = User.create(full_name: "Sakura Haruno", email: "sakura@leaf.com", password: ENV["USER_SEED_PWD3"], profile_image: File.open(File.join(Rails.root, '/app/assets/images/sakura.png')))

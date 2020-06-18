@@ -19,10 +19,12 @@ feature 'user signs in', %Q{
   scenario 'valid account' do
     visit new_user_session_path
 
+    expect(page).to have_content('Welcome back!')
+
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
     expect(page).to_not have_content(user.password)
-    click_button 'Log in'
+    click_button 'Sign in'
 
     expect(page).to have_content('Signed in successfully.')
     expect(page).to have_content(user.full_name)
@@ -30,7 +32,7 @@ feature 'user signs in', %Q{
 
   scenario 'invalid account' do
     visit new_user_session_path
-    click_button 'Log in'
+    click_button 'Sign in'
 
     expect(page).to have_content('Invalid Email or password.')
   end
