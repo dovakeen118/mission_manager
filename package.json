@@ -6,7 +6,8 @@
     "yarn": ">=0.25.2"
   },
   "scripts": {
-    "start": "./bin/webpack-dev-server"
+    "start": "./bin/webpack-dev-server",
+    "test": "./node_modules/.bin/jest"
   },
   "dependencies": {
     "@babel/core": "^7.9.6",
@@ -22,7 +23,26 @@
     "redbox-react": "1.6.0"
   },
   "devDependencies": {
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "jest": "^26.0.1",
+    "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0"
+  },
+  "jest": {
+    "automock": false,
+    "roots": [
+      "spec/javascript",
+      "app/javascript"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "app/javascript"
+    ],
+    "setupFiles": [
+      "./spec/javascript/support/enzyme.js"
+    ],
+    "testURL": "http://localhost/"
   }
 }
