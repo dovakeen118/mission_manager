@@ -9,7 +9,7 @@ const MissionTile = (props) => {
         <li>{props.mission.title}</li>
       </Link>
 
-      <p>Submitted by: <i>{props.mission.user.full_name}</i></p>
+      <p>Submitted by: {props.mission.user.full_name}</p>
     </div>
   )
 }

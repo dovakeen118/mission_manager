@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import MissionShow from "../components/MissionShow";
 
 const MissionShowContainer = (props) => {
-
   const [mission, setMission] = useState({
     id: null,
     title: null,
@@ -40,7 +39,7 @@ const MissionShowContainer = (props) => {
   let missionShow;
 
   if (mission.id === null) {
-    missionShow = <p><i>Sorry, no mission was found</i></p>
+    missionShow = <p>Sorry, no mission was found</p>
   } else {
     missionShow =
       <MissionShow
