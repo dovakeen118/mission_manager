@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'view a user profile page', %Q{
+xfeature 'view a user profile page', %Q{
   As a user
   I can only view my profile page unless I am an admin
   So that user information is not shared

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 
-import MissionForm from "../components/MissionForm";
+import MissionFormContainer from "./MissionFormContainer";
 
 const NewMissionContainer = (props) => {
   const [redirect, setRedirect] = useState(false)
@@ -61,7 +61,7 @@ const NewMissionContainer = (props) => {
         </Link>
       </i>
 
-      <MissionForm
+      <MissionFormContainer
         addNewMission={addNewMission}
       />
     </div>

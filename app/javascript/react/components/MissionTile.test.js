@@ -8,7 +8,12 @@ import MissionTile from "./MissionTile";
 
 describe("MissionTile", () => {
   let wrapper;
-  let user = { email: "test@email.com", full_name: "Naruto", role: "user" }
+  let user = {
+    email: "test@email.com",
+    full_name: "Naruto",
+    role: "user"
+  }
+
   let mission = {
     id: 1,
     title: "Test Title",

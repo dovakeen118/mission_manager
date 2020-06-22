@@ -25,7 +25,10 @@ RSpec.describe MissionSerializer, type: :serializer do
   end
 
   it "returns the serialized user that matches" do
-    expect(serialized_object["mission"]["user"]).to eq(UserSerializer.new(mission.user).attributes.stringify_keys)
+    user = UserSerializer.new(mission.user).attributes.stringify_keys
+    user_object = JSON.parse(user.to_json)
+    
+    expect(serialized_object["mission"]["user"]).to eq(user_object)
   end
 
   it "returns a boolean if a user is signed in" do
