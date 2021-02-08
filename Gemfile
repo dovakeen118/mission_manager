@@ -27,7 +27,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'active_model_serializers'
 gem 'autoprefixer-rails'
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem 'devise'
 gem 'font-awesome-rails'
 gem 'foundation-rails', '~> 6.5', '>= 6.5.3.0'
